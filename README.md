@@ -1,4 +1,4 @@
-- ![](C:\workflows\gds\badge.svg) ![](C:\workflows\docs\badge.svg)
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test.yaml/badge.svg)
 
   # Bulls and cows
 
