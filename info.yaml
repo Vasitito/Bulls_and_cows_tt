@@ -22,18 +22,17 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       "Vasitito"
-  title:        "An implementation of a Bulls and Cows game"
+  author:       "Vasileios Titopoulos"
+  title:        "The Bulls and Cows game"
   language:     "Verilog"
-  description:  "An implementation of a Bulls and Cows game"
+  description:  "An implementation of the Bulls and Cows game"
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-    Four secret numbers are set through user inputs. Then the inputs are used in order to discover the secret numbers
-
+    The bulls and cows is a game where the users try to discover the exact pattern of secret numbers
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Connect a clock for the internal registers and use the inputs in oder to play. 
+      Firstly, a secret pattern of four 3-bit numbers, which are different with each other, should be set. This is done through the save signal. After the secret number is set, another user tries to find the correct pattern of numbers. In order for the correct pattern to be found, the signals of cows and bulls are pinpointing as to whether the user input had any match with the secret pattern. The cows indication shows as to whether the input matches with any secret number but it is not in the right position. On the other hand, the cows indication shows as to whether the input matches and is placed correctly. The purpose of the game is for the user to achieve four bulls indications. For the signals of bulls and cows the indications are showed through the seven segment display. In the seven segment display the bulls indication is placed in the top region (0-1-5-6) and the cows indication is placed in the bottom region (2-3-4-7) of the seven segment display. 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:
     - I0/Number1[0]
@@ -47,12 +46,12 @@ documentation:
     
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - O0/bulls[0]/segment a
-    - O1/bulls[1]/segment b
+    - O0/bulls[1]/segment a
+    - O1/bulls[2]/segment b
     - O2/cows[0]/segment c
     - O3/cows[1]/segment d
     - O4/cows[2]/segment e
-    - O5/bulls[2]/segment f
+    - O5/bulls[0]/segment f
     - O6/bulls[3]/segment g
     - O7/cows[3]/dot
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
@@ -61,14 +60,14 @@ documentation:
     - I8/Number3[1]
     - I9/Number3[2]
     - I10/Number4[0]
-    - I11/Number5[1]
-    - I12/Number6[2]
+    - I11/Number4[1]
+    - I12/Number4[2]
     - none
     - none
 # The following fields are optional
   tag:          "test"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
   external_hw:  ""      # Describe any external hardware needed
-  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  discord:      "vtitopou"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "https://github.com/Vasitito/Bulls_and_cows_tt/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     25 000 000       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
+  picture:      "./figures/figure1.png"      # relative path to a picture in your repository

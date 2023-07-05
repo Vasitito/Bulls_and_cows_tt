@@ -45,6 +45,6 @@ module top_bulls_and_cows(clk,rst_n,inpA,inpB,inpC,inpD,save,segment_out);
              .bulls(bulls),
              .cows(cows));
 
-    assign segment_out={cows[3],bulls[3:2],cows[2:0],bulls[1:0]};
+    assign segment_out={cows[3],bulls[3],bulls[0],cows[2:0],bulls[2:1]};
 
 endmodule
