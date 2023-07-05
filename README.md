@@ -10,7 +10,7 @@
   <img src=./figures/figure1.png>
   </p>
   <p align = "center">
-      <b>Figure 1:</b> The logic diagram of bulls and cows game
+      <b>Figure 1:</b> The logic diagram of the bulls and cows game
   </p>
 
   # How to play
