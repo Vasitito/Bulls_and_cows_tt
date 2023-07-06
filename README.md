@@ -4,7 +4,7 @@
 
   
 
-This repository contains the implementation of the game bulls and cows. The bulls and cows is a game where the users try to discover the exact pattern of secret numbers. The logic diagram of the hardware implementation of the game is represented below
+This repository contains the implementation of the game bulls and cows in Verilog. The bulls and cows is a game where the users try to discover the exact pattern of secret numbers. The logic diagram of the hardware implementation of the game is represented below
 
   <p align="center">
   <img src=./figures/figure1.png>
