@@ -9,16 +9,52 @@ module tt_um_bulls_and_cows (
     input  wire       rst_n
 );
 
+reg [6:0] ui_in_reg_1;
+reg [6:0] ui_in_reg_2;
+
+always @(posedge clk) begin
+    if(!rst_n) begin
+        ui_in_reg_1<=0;
+        ui_in_reg_2<=0;
+    end
+    else begin
+        ui_in_reg_1<=ui_in[6:0];
+        ui_in_reg_2<=ui_in_reg_1; 
+    end
+end
+
+reg [5:0] uio_in_reg_1;
+reg [5:0] uio_in_reg_2;
+
+always @(posedge clk) begin
+    if(!rst_n) begin
+        uio_in_reg_1<=0;
+        uio_in_reg_2<=0;
+    end
+    else begin
+        uio_in_reg_1<=uio_in[5:0];
+        uio_in_reg_2<=uio_in_reg_1[5:0]; 
+    end
+end
+
+wire save;
+assign save=~ui_in_reg_2 & ui_in_reg_1;
+
+
 assign uio_oe = 0;
 assign uio_out= 0;
 
 top_bulls_and_cows tt_b_c(.clk(clk),
                          .rst_n(rst_n),
-                         .inpA(ui_in[2:0]),
-                         .inpB(ui_in[5:3]),
-                         .inpC(uio_in[2:0]),
-                         .inpD(uio_in[5:3]),
-                         .save(ui_in[6]),
-                         .segment_out(uo_out));
+                         .inpA(ui_in_reg_2[2:0]),
+                         .inpB(ui_in_reg_2[5:3]),
+                         .inpC(uio_in_reg_2[2:0]),
+                         .inpD(uio_in_reg_2[5:3]),
+                         .save(save),
+                         .segment_out(uo_out),
+                         .secret_number_A(secret_number_A),
+                         .secret_number_B(secret_number_B),
+                         .secret_number_C(secret_number_C),
+                         .secret_number_D(secret_number_D));
 
 endmodule
