@@ -51,10 +51,6 @@ top_bulls_and_cows tt_b_c(.clk(clk),
                          .inpC(uio_in_reg_2[2:0]),
                          .inpD(uio_in_reg_2[5:3]),
                          .save(save),
-                         .segment_out(uo_out),
-                         .secret_number_A(secret_number_A),
-                         .secret_number_B(secret_number_B),
-                         .secret_number_C(secret_number_C),
-                         .secret_number_D(secret_number_D));
+                         .segment_out(uo_out));
 
 endmodule
