@@ -11,15 +11,18 @@ module tt_um_bulls_and_cows (
 
 reg [6:0] ui_in_reg_1;
 reg [6:0] ui_in_reg_2;
+reg save_reg;
 
 always @(posedge clk) begin
     if(!rst_n) begin
         ui_in_reg_1<=0;
         ui_in_reg_2<=0;
+        save_reg<=0;
     end
     else begin
         ui_in_reg_1<=ui_in[6:0];
         ui_in_reg_2<=ui_in_reg_1; 
+        save_reg<=ui_in_reg_2[6];
     end
 end
 
@@ -38,7 +41,7 @@ always @(posedge clk) begin
 end
 
 wire save;
-assign save=~ui_in_reg_2 & ui_in_reg_1;
+assign save=(~save_reg) & (ui_in_reg_2[6]);
 
 
 assign uio_oe = 0;
